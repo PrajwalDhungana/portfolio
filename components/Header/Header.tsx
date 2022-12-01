@@ -8,53 +8,56 @@ export default function Header({}: Props) {
   const navListVariants = {
     start: {
       transition: {
-        staggerChildren: 0.1
-      }
+        staggerChildren: 0.1,
+      },
     },
     end: {
       transition: {
-        staggerChildren: 0.1
-      }
+        staggerChildren: 0.1,
+      },
     },
   };
 
   const navLinksVariant = {
     start: {
-      y: 500,
-      opacity: 0
+      y: 300,
+      opacity: 0,
     },
     end: {
       y: 0,
-      opacity: 1
+      opacity: 1,
     },
   };
 
   const navLinksTransition = {
-    duration: 0.4,
-    ease: "easeInOut"
+    duration: 1,
+    ease: "easeInOut",
+    delay: 2
   };
 
   return (
     <header>
-      <nav className="flex py-3 px-5 justify-between">
+      <nav className="flex py-3 px-5 justify-between overflow-hidden">
         <div className="flex">
           <motion.div
             initial={{
-              x: -500,
+              x: -300,
               scale: 0.5,
+              opacity: 0,
             }}
             animate={{
               x: 0,
-              scale: 1
+              scale: 1,
+              opacity: 1,
             }}
             transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 30,
-              delay: 0.5
+              duration: 1,
+              delay: 2,
             }}
           >
-            <h3 className="text-grey font-bold text-4xl tracking-wide">::przwl</h3>
+            <h3 className="text-grey font-bold text-4xl tracking-wide">
+              ::przwl
+            </h3>
           </motion.div>
         </div>
 
@@ -68,17 +71,13 @@ export default function Header({}: Props) {
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              whileHover={{scale: 1.2}}
-              whileTap={{scale: 0.9}}
-              className="py-2 px-4 mx-2 text-grey cursor-pointer hover:text-deep"
+              className="py-2 px-4 mx-2 text-grey cursor-pointer hover:text-deep hover:scale-125"
             >
               <a href="#">About Me</a>
             </motion.li>
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              whileHover={{scale: 1.2}}
-              whileTap={{scale: 0.9}}
               className="py-2 px-4 mx-2 text-grey cursor-pointer hover:text-deep"
             >
               <a href="#">Skills</a>
@@ -86,8 +85,6 @@ export default function Header({}: Props) {
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              whileHover={{scale: 1.2}}
-              whileTap={{scale: 0.9}}
               className="py-2 px-4 mx-2 text-grey cursor-pointer hover:text-deep"
             >
               <a href="#">Contact</a>
@@ -95,8 +92,7 @@ export default function Header({}: Props) {
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              whileHover={{scale: 1.2}}
-              whileTap={{scale: 0.9}}
+              whileTap={{ scale: 0.9 }}
               className="py-2 px-4 mx-2 text-deep cursor-pointer hover:bg-slate-200"
             >
               <a href="#">
@@ -106,8 +102,7 @@ export default function Header({}: Props) {
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              whileHover={{scale: 1.2}}
-              whileTap={{scale: 0.9}}
+              whileTap={{ scale: 0.9 }}
               className="py-2 px-4 mx-2 border text-deep border-deep cursor-pointer hover:bg-deep hover:text-white"
             >
               <a href="#">Resume</a>
