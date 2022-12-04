@@ -9,8 +9,9 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   return (
     <AnimatePresence>
+      <div className="overflow-hidden">
       {loading ? (
-        <motion.div key='loader'><Loader setLoading={setLoading} /></motion.div>
+        <motion.div key='loader' className="overflow-hidden"><Loader setLoading={setLoading} /></motion.div>
       ) : (
         <div className="flex flex-col h-screen">
           <Head>
@@ -24,6 +25,7 @@ export default function Home() {
           <Hero />
         </div>
       )}
+      </div>
     </AnimatePresence>
   );
 }

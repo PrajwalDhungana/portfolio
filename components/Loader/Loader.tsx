@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 type Props = {
@@ -17,7 +17,7 @@ export default function Loader({ setLoading }: Props) {
 
   const loadingContainerVariant = {
     start: {
-      x: -200,
+      y: 400,
       opacity: 0,
       scale: 0.5,
       transition: {
@@ -25,10 +25,11 @@ export default function Loader({ setLoading }: Props) {
       },
     },
     end: {
-      x: 0,
+      y: 0,
       opacity: 1,
-      scale: 2,
+      scale: 1,
       transition: {
+        duration: 1,
         staggerChildren: 0.1,
       },
     },
@@ -36,7 +37,7 @@ export default function Loader({ setLoading }: Props) {
 
   const loadingCircleVariant = {
     start: {
-      y: -10,
+      y: -20,
     },
     end: {
       y: 0,
