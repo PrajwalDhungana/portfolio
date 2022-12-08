@@ -89,7 +89,7 @@ const HeroTitle = ({ title }: any) => {
 
 const HeroSubTitle = ({ title, transition }: any) => {
   return (
-    <div className="overflow-hidden text-3xl font-semibold text-grey mb-5">
+    <div className="overflow-hidden text-3xl font-semibold text-charcoal mb-5">
       <AnimatedLetters title={title} transition={transition} />
     </div>
   );

@@ -55,7 +55,7 @@ export default function Header({}: Props) {
               delay: 2,
             }}
           >
-            <h3 className="text-grey font-bold text-4xl tracking-wide">
+            <h3 className="text-charcoal font-bold text-4xl tracking-wide">
               ::przwl
             </h3>
           </motion.div>
@@ -71,21 +71,21 @@ export default function Header({}: Props) {
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              className="py-2 px-4 mx-2 text-grey cursor-pointer hover:text-deep hover:scale-125"
+              className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep hover:scale-125"
             >
               <a href="#">About Me</a>
             </motion.li>
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              className="py-2 px-4 mx-2 text-grey cursor-pointer hover:text-deep"
+              className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
             >
               <a href="#">Skills</a>
             </motion.li>
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
-              className="py-2 px-4 mx-2 text-grey cursor-pointer hover:text-deep"
+              className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
             >
               <a href="#">Contact</a>
             </motion.li>
