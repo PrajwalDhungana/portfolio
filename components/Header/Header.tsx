@@ -1,7 +1,7 @@
 import React from "react";
 import { CiDark } from "react-icons/ci";
 import { motion } from "framer-motion";
-import Link from 'next/link'
+import Link from "next/link";
 
 type Props = {};
 
@@ -32,7 +32,7 @@ export default function Header({}: Props) {
 
   const navLinksTransition = {
     duration: 1,
-    ease: "easeInOut"
+    ease: "easeInOut",
   };
 
   return (
@@ -51,12 +51,14 @@ export default function Header({}: Props) {
               opacity: 1,
             }}
             transition={{
-              duration: .5
+              duration: 0.5,
             }}
           >
-            <h3 className="text-charcoal font-bold text-4xl tracking-wide">
-              ::przwl
-            </h3>
+            <Link href="/">
+              <h3 className="text-charcoal font-bold text-4xl tracking-wide">
+                ::przwl
+              </h3>
+            </Link>
           </motion.div>
         </div>
 
@@ -79,14 +81,14 @@ export default function Header({}: Props) {
               transition={navLinksTransition}
               className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
             >
-              <a href="#">Skills</a>
+              <Link href="/skills">Skills</Link>
             </motion.li>
             <motion.li
               variants={navLinksVariant}
               transition={navLinksTransition}
               className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
             >
-              <a href="#">Contact</a>
+              <Link href="/contact">Contact</Link>
             </motion.li>
             <motion.li
               variants={navLinksVariant}
