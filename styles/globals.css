@@ -16,7 +16,8 @@
 .btn::before{
 	transition: all 0.5s cubic-bezier(.68, -0.55, 0.265, 1.55);
 	content: '';
-	width: 25%;
+	width: 0%;
+	border: 1px solid black;
 	height: 100%;
 	background:#2d3142;
 	position: absolute;
@@ -34,4 +35,9 @@
 .btn:hover::before{
 	background: #2d3142;
 	width: 100%;
+}
+
+main{
+	display: flex;
+	height: 100%;
 }
