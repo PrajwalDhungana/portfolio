@@ -6,8 +6,8 @@ type Props = {};
 const hero = {
   animate: {
     transition: {
-      delayChildren: 0.2,
-      staggerChildren: 0.1,
+      delayChildren: 0.1,
+      staggerChildren: 0.05,
     },
   },
 };
@@ -27,8 +27,8 @@ const letterAnimation = {
 
 export default function Hero({}: Props) {
   return (
-    <div className="flex p-5 items-center h-full">
-      <div className="p-6 ml-24">
+    <div className="flex p-5 items-center h-full flex-1">
+      <div className="p-6 lg:ml-24 break-words">
         <motion.div variants={hero}>
           <HeroTitle title={"Prajwal Dhungana"} />
           <HeroSubTitle
@@ -42,12 +42,12 @@ export default function Hero({}: Props) {
               }}
               animate={{ x: 0 }}
               transition={{
-                delay: 2,
+                delay: 1,
                 duration: 1,
               }}
             >
-              <button className="btn">
-                <span className="btn-text">Know More About Me</span>
+              <button className="btn h-10 items-center flex">
+                <span className="btn-text text-sm lg:text-lg font-light">Know More About Me</span>
               </button>
             </motion.div>
           </div>
@@ -81,7 +81,7 @@ const AnimatedLetters = ({ title, transition }: any) => {
 
 const HeroTitle = ({ title }: any) => {
   return (
-    <div className="overflow-hidden text-7xl font-heading mb-3 uppercase font-bold">
+    <div className="overflow-hidden text-3xl md:text-5xl lg:text-7xl font-heading mb-3 uppercase font-bold">
       <AnimatedLetters title={title} />
     </div>
   );
@@ -89,7 +89,7 @@ const HeroTitle = ({ title }: any) => {
 
 const HeroSubTitle = ({ title, transition }: any) => {
   return (
-    <div className="overflow-hidden text-3xl font-semibold text-charcoal mb-5">
+    <div className="overflow-hidden text-lg md:text-xl lg:text-3xl font-semibold text-charcoal mb-5">
       <AnimatedLetters title={title} transition={transition} />
     </div>
   );
