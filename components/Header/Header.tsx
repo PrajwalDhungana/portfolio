@@ -67,7 +67,7 @@ export default function Header({}: Props) {
             variants={navListVariants}
             initial="start"
             animate="end"
-            className="flex text-md font-semibold"
+            className="hidden md:flex text-md font-semibold"
           >
             <motion.li
               variants={navLinksVariant}
