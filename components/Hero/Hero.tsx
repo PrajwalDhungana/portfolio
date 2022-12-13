@@ -38,16 +38,16 @@ export default function Hero({}: Props) {
           <div className="overflow-hidden">
             <motion.div
               initial={{
-                x: -300,
+                y: -300,
               }}
-              animate={{ x: 0 }}
+              animate={{ y: 0 }}
               transition={{
-                delay: 1,
+                delay: 0.5,
                 duration: 1,
               }}
             >
-              <button className="btn h-10 items-center flex">
-                <span className="btn-text text-sm lg:text-lg font-light">Know More About Me</span>
+              <button className="border-2 border-deep charcoal-500 py-7 px-5 h-10 items-center flex hover:bg-deep hover:text-white">
+                <span className="text-sm lg:text-xl">Know More About Me</span>
               </button>
             </motion.div>
           </div>
