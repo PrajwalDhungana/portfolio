@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
   return (
     <AnimatePresence>
-      <div className="overflow-hidden flex flex-col h-screen">
+      <section className="overflow-hidden flex flex-col h-screen font-heading">
         {loading ? (
           <motion.div key="loader" className="overflow-hidden">
             <Loader setLoading={setLoading} />
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </Layout>
         )}
-      </div>
+      </section>
     </AnimatePresence>
   );
 }
