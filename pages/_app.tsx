@@ -1,6 +1,25 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import { useState } from "react";
+import type { AppProps } from "next/app";
+import Layout from "../components/layout";
+import Loader from "../components/Loader/Loader";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [loading, setLoading] = useState(true);
+  return (
+    <AnimatePresence>
+      <section className="overflow-hidden flex flex-col h-screen font-heading">
+        {loading ? (
+          <motion.div key="loader" className="overflow-hidden">
+            <Loader setLoading={setLoading} />
+          </motion.div>
+        ) : (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
+      </section>
+    </AnimatePresence>
+  );
 }

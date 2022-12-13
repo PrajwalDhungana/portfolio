@@ -1,7 +1,7 @@
 import React from "react";
 import { CiDark } from "react-icons/ci";
 import { motion } from "framer-motion";
-import Link from 'next/link'
+import Link from "next/link";
 
 type Props = {};
 
@@ -32,7 +32,7 @@ export default function Header({}: Props) {
 
   const navLinksTransition = {
     duration: 1,
-    ease: "easeInOut"
+    ease: "easeInOut",
   };
 
   return (
@@ -51,12 +51,14 @@ export default function Header({}: Props) {
               opacity: 1,
             }}
             transition={{
-              duration: .5
+              duration: 0.5,
             }}
           >
-            <h3 className="text-charcoal font-bold text-4xl tracking-wide">
-              ::przwl
-            </h3>
+            <Link href="/">
+              <h3 className="text-charcoal font-bold text-4xl tracking-widest">
+                ::przwl
+              </h3>
+            </Link>
           </motion.div>
         </div>
 
@@ -65,50 +67,137 @@ export default function Header({}: Props) {
             variants={navListVariants}
             initial="start"
             animate="end"
-            className="flex text-md font-semibold"
+            className="hidden md:flex text-lg font-semibold"
           >
-            <motion.li
-              variants={navLinksVariant}
-              transition={navLinksTransition}
-              className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep hover:scale-125"
-            >
-              <Link href="/about">About Me</Link>
-            </motion.li>
-            <motion.li
-              variants={navLinksVariant}
-              transition={navLinksTransition}
-              className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
-            >
-              <a href="#">Skills</a>
-            </motion.li>
-            <motion.li
-              variants={navLinksVariant}
-              transition={navLinksTransition}
-              className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
-            >
-              <a href="#">Contact</a>
-            </motion.li>
-            <motion.li
-              variants={navLinksVariant}
-              transition={navLinksTransition}
-              whileTap={{ scale: 0.9 }}
-              className="py-2 px-4 mx-2 text-deep cursor-pointer hover:bg-slate-200"
-            >
-              <a href="#">
+            <Link href="/about">
+              <motion.li
+                variants={navLinksVariant}
+                transition={navLinksTransition}
+                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep hover:scale-125"
+              >
+                About Me
+              </motion.li>
+            </Link>
+            <Link href="/skills">
+              <motion.li
+                variants={navLinksVariant}
+                transition={navLinksTransition}
+                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
+              >
+                Skills
+              </motion.li>
+            </Link>
+            <Link href="/contact">
+              <motion.li
+                variants={navLinksVariant}
+                transition={navLinksTransition}
+                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
+              >
+                Contact
+              </motion.li>
+            </Link>
+            <a href="#">
+              <motion.li
+                variants={navLinksVariant}
+                transition={navLinksTransition}
+                whileTap={{ scale: 0.9 }}
+                className="py-2 px-4 mx-2 text-deep cursor-pointer hover:bg-slate-200"
+              >
                 <CiDark className="text-2xl h-full" />
-              </a>
-            </motion.li>
-            <motion.li
-              variants={navLinksVariant}
-              transition={navLinksTransition}
-              whileTap={{ scale: 0.9 }}
-              className="py-2 px-4 mx-2 border text-deep border-deep cursor-pointer hover:bg-deep hover:text-white"
-            >
-              <a href="#">Resume</a>
-            </motion.li>
+              </motion.li>
+            </a>
+            <a href="#">
+              <motion.button
+                variants={navLinksVariant}
+                transition={navLinksTransition}
+                whileTap={{ scale: 0.9 }}
+                className="py-2 px-4 mx-2 border text-deep border-deep cursor-pointer hover:bg-deep hover:text-white"
+              >
+                Resume
+              </motion.button>
+            </a>
           </motion.ul>
         </div>
       </nav>
     </header>
   );
+}
+
+{
+  /* <header>
+<nav className="flex py-3 px-5 justify-between overflow-hidden">
+  <div className="flex">
+    <motion.div
+      initial={{
+        x: -300,
+        scale: 0.5,
+        opacity: 0,
+      }}
+      animate={{
+        x: 0,
+        scale: 1,
+        opacity: 1,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+    >
+      <Link href="/">
+        <h3 className="text-charcoal font-bold text-4xl tracking-wide">
+          ::przwl
+        </h3>
+      </Link>
+    </motion.div>
+  </div>
+
+  <div className="flex">
+    <motion.ul
+      variants={navListVariants}
+      initial="start"
+      animate="end"
+      className="hidden md:flex text-md font-semibold"
+    >
+      <motion.li
+        variants={navLinksVariant}
+        transition={navLinksTransition}
+        className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep hover:scale-125"
+      >
+        <Link href="/about">About Me</Link>
+      </motion.li>
+      <motion.li
+        variants={navLinksVariant}
+        transition={navLinksTransition}
+        className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
+      >
+        <Link href="/skills">Skills</Link>
+      </motion.li>
+      <motion.li
+        variants={navLinksVariant}
+        transition={navLinksTransition}
+        className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
+      >
+        <Link href="/contact">Contact</Link>
+      </motion.li>
+      <motion.li
+        variants={navLinksVariant}
+        transition={navLinksTransition}
+        whileTap={{ scale: 0.9 }}
+        className="py-2 px-4 mx-2 text-deep cursor-pointer hover:bg-slate-200"
+      >
+        <a href="#">
+          <CiDark className="text-2xl h-full" />
+        </a>
+      </motion.li>
+      <motion.li
+        variants={navLinksVariant}
+        transition={navLinksTransition}
+        whileTap={{ scale: 0.9 }}
+        className="py-2 px-4 mx-2 border text-deep border-deep cursor-pointer hover:bg-deep hover:text-white"
+      >
+        <a href="#">Resume</a>
+      </motion.li>
+    </motion.ul>
+  </div>
+</nav>
+</header> */
 }
