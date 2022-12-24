@@ -1,4 +1,4 @@
-import Header from './Header/Header'
+import Header from "./Header/Header";
 
 export default function Layout({ children }: any) {
   return (
@@ -6,5 +6,5 @@ export default function Layout({ children }: any) {
       <Header />
       <main>{children}</main>
     </>
-  )
+  );
 }
