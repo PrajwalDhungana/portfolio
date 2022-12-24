@@ -6,7 +6,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      heading: ['Josefin Sans', 'sans-serif']
+      heading: ['Josefin Sans', 'sans-serif'],
+      righte: ['Righteous', 'cursive']
     },
     extend: {
       colors: {  
