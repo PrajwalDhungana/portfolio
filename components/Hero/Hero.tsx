@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
@@ -46,9 +47,11 @@ export default function Hero({}: Props) {
                 duration: 1,
               }}
             >
-              <button className="border-2 border-deep charcoal-500 py-7 px-5 h-10 items-center flex hover:bg-deep hover:text-white">
-                <span className="text-sm lg:text-xl">Know More About Me</span>
-              </button>
+              <Link href="/about">
+                <button className="bg-clay py-5 px-5 hover:bg-charcoal text-white">
+                  <span className="text-sm lg:text-xl font-bold">Know More About Me</span>
+                </button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>
@@ -81,7 +84,7 @@ const AnimatedLetters = ({ title, transition }: any) => {
 
 const HeroTitle = ({ title }: any) => {
   return (
-    <div className="overflow-hidden text-3xl md:text-5xl lg:text-7xl font-heading mb-3 uppercase font-bold">
+    <div className="overflow-hidden text-3xl md:text-5xl lg:text-7xl font-heading mb-3 uppercase font-bold text-clay">
       <AnimatedLetters title={title} />
     </div>
   );

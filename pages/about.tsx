@@ -19,11 +19,11 @@ export default function About() {
             animate="animate"
             variants={textVariant}
             transition={{ delay: 0, duration: 1 }}
-            className="text-4xl uppercase font-bold mb-5 px-3 py-20"
+            className="text-4xl uppercase font-bold mb-5 px-3 py-20 text-charcoal"
           >
             About Me
           </motion.div>
-          <motion.div className="flex flex-col max-w-4xl text-2xl gap-7 font-heading">
+          <motion.div className="flex flex-col max-w-4xl text-2xl gap-7 font-heading text-charcoal">
             <motion.p
               initial="initial"
               animate="animate"

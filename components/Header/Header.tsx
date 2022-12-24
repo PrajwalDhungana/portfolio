@@ -55,7 +55,7 @@ export default function Header({}: Props) {
             }}
           >
             <Link href="/">
-              <h3 className="text-charcoal font-bold text-4xl tracking-widest">
+              <h3 className="text-clay hover:text-charcoal font-bold text-4xl font-righte tracking-wide">
                 ::przwl
               </h3>
             </Link>
@@ -67,13 +67,13 @@ export default function Header({}: Props) {
             variants={navListVariants}
             initial="start"
             animate="end"
-            className="hidden md:flex text-lg font-semibold"
+            className="hidden md:flex text-xl font-semibold"
           >
             <Link href="/about">
               <motion.li
                 variants={navLinksVariant}
                 transition={navLinksTransition}
-                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep hover:scale-125"
+                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-clay"
               >
                 About Me
               </motion.li>
@@ -82,7 +82,7 @@ export default function Header({}: Props) {
               <motion.li
                 variants={navLinksVariant}
                 transition={navLinksTransition}
-                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
+                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-clay"
               >
                 Skills
               </motion.li>
@@ -91,7 +91,7 @@ export default function Header({}: Props) {
               <motion.li
                 variants={navLinksVariant}
                 transition={navLinksTransition}
-                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-deep"
+                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-clay"
               >
                 Contact
               </motion.li>
@@ -101,7 +101,7 @@ export default function Header({}: Props) {
                 variants={navLinksVariant}
                 transition={navLinksTransition}
                 whileTap={{ scale: 0.9 }}
-                className="py-2 px-4 mx-2 text-deep cursor-pointer hover:bg-slate-200"
+                className="py-2 px-4 mx-2 text-charcoal font-bold cursor-pointer hover:bg-slate-200"
               >
                 <CiDark className="text-2xl h-full" />
               </motion.li>
@@ -111,7 +111,7 @@ export default function Header({}: Props) {
                 variants={navLinksVariant}
                 transition={navLinksTransition}
                 whileTap={{ scale: 0.9 }}
-                className="py-2 px-4 mx-2 border text-deep border-deep cursor-pointer hover:bg-deep hover:text-white"
+                className="py-2 px-4 mx-2 bg-clay cursor-pointer hover:bg-charcoal text-white"
               >
                 Resume
               </motion.button>
