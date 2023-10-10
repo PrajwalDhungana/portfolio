@@ -17,7 +17,7 @@ export default function Loader({ setLoading }: Props) {
 
   const loadingContainerVariant = {
     start: {
-      y: 400,
+      y: -100,
       opacity: 0,
       scale: 0.5,
       transition: {
@@ -37,7 +37,7 @@ export default function Loader({ setLoading }: Props) {
 
   const loadingCircleVariant = {
     start: {
-      y: -20,
+      y: 0,
     },
     end: {
       y: 0,
@@ -46,12 +46,12 @@ export default function Loader({ setLoading }: Props) {
 
   const loadingCircleTransition = {
     duration: 0.5,
-    yoyo: 5,
+    yoyo: 10,
     ease: "easeInOut",
   };
 
   return (
-    <div className="flex h-screen justify-center items-center">
+    <div className="flex h-screen justify-center items-center bg-black">
       <motion.div
         variants={loadingContainerVariant}
         initial="start"
@@ -59,7 +59,7 @@ export default function Loader({ setLoading }: Props) {
         className="flex justify-around"
         onAnimationComplete={() => setLoading(false)}
       >
-        <motion.span
+        {/* <motion.span
           style={loadingCircle}
           variants={loadingCircleVariant}
           transition={loadingCircleTransition}
@@ -73,7 +73,14 @@ export default function Loader({ setLoading }: Props) {
           style={loadingCircle}
           variants={loadingCircleVariant}
           transition={loadingCircleTransition}
-        />
+        /> */}
+        <motion.span className="coffee"
+          variants={loadingCircleVariant}
+          transition={loadingCircleTransition}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </motion.span>
       </motion.div>
     </div>
   );

@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     fontFamily: {
       heading: ['Josefin Sans', 'sans-serif'],
-      righte: ['Righteous', 'cursive']
+      righte: ['Righteous', 'cursive'],
+      istokWeb: ['Istok Web', 'sans-serif'],
     },
     extend: {
       colors: {  
