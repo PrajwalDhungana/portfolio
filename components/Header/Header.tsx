@@ -21,7 +21,7 @@ export default function Header({}: Props) {
 
   const navLinksVariant = {
     start: {
-      y: 300,
+      y: 0,
       opacity: 0,
     },
     end: {
@@ -31,8 +31,9 @@ export default function Header({}: Props) {
   };
 
   const navLinksTransition = {
-    duration: 2,
+    duration: 1,
     ease: "easeInOut",
+    delay: 3
   };
 
   return (
@@ -44,31 +45,22 @@ export default function Header({}: Props) {
             variants={navListVariants}
             initial="start"
             animate="end"
-            className="hidden md:flex items-center gap-12"
+            className="hidden md:flex items-center gap-32"
           >
             <Link href="/about">
               <motion.li
                 variants={navLinksVariant}
                 transition={navLinksTransition}
-                className="py-2 px-4 mx-2 text-charcoal hover:text-teal-600  hover:-translate-y-2 cursor-pointer uppercase font-bold text-lg"
+                className="py-2 px-4 mx-2 text-charcoal hover:text-red-600  hover:-translate-y-2 cursor-pointer uppercase text-lg"
               >
-                About Me
-              </motion.li>
-            </Link>
-            <Link href="/skills">
-              <motion.li
-                variants={navLinksVariant}
-                transition={navLinksTransition}
-                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-teal-600 uppercase font-bold text-lg"
-              >
-                Skills
+                About
               </motion.li>
             </Link>
             <div className="flex">
               <motion.div
                 initial={{
-                  y: -100,
-                  scale: 0.5,
+                  y: 0,
+                  scale: 0.9,
                   opacity: 0,
                 }}
                 animate={{
@@ -85,22 +77,13 @@ export default function Header({}: Props) {
                 </Link>
               </motion.div>
             </div>
-            <Link href="/contact">
+            <Link href="/skills">
               <motion.li
                 variants={navLinksVariant}
                 transition={navLinksTransition}
-                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-teal-600 uppercase font-bold text-lg"
+                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-red-600 uppercase text-lg"
               >
-                Contact
-              </motion.li>
-            </Link>
-            <Link href="/resume">
-              <motion.li
-                variants={navLinksVariant}
-                transition={navLinksTransition}
-                className="py-2 px-4 mx-2 text-charcoal cursor-pointer hover:text-teal-600 uppercase font-bold text-lg"
-              >
-                Resume
+                Work
               </motion.li>
             </Link>
           </motion.ul>
@@ -113,13 +96,7 @@ export default function Header({}: Props) {
 const Logo = () => {
    return (
     <svg width="40" height="60" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M36.1977 14.8315H7.41573C3.32013 14.8315 0 11.5113 0 7.41573C0 3.32014 3.32013 0 7.41573 0H35.6742C49.1089 0 60 10.891 60 24.3258V25.9986C60 38.5096 49.8579 48.6517 37.3469 48.6517H25.368C19.4729 48.6517 14.6939 53.4307 14.6939 59.3258V62.6531C14.6939 66.7107 11.4045 70 7.34694 70C3.28934 70 0 66.7107 0 62.6531V52.3034C0 42.5298 7.92306 34.6067 17.6966 34.6067H36.1977C41.6585 34.6067 46.0853 30.1799 46.0853 24.7191C46.0853 19.2583 41.6585 14.8315 36.1977 14.8315Z" fill="url(#paint0_linear_209_48)"/>
-      <defs>
-        <linearGradient id="paint0_linear_209_48" x1="-0.111317" y1="35.0562" x2="60" y2="35.0562" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#2A403E"/>
-          <stop offset="1" stopColor="#09938A"/>
-        </linearGradient>
-      </defs>
+      <path d="M36.1977 14.8315H7.41573C3.32013 14.8315 0 11.5113 0 7.41573C0 3.32014 3.32013 0 7.41573 0H35.6742C49.1089 0 60 10.891 60 24.3258V25.9986C60 38.5096 49.8579 48.6517 37.3469 48.6517H25.368C19.4729 48.6517 14.6939 53.4307 14.6939 59.3258V62.6531C14.6939 66.7107 11.4045 70 7.34694 70C3.28934 70 0 66.7107 0 62.6531V52.3034C0 42.5298 7.92306 34.6067 17.6966 34.6067H36.1977C41.6585 34.6067 46.0853 30.1799 46.0853 24.7191C46.0853 19.2583 41.6585 14.8315 36.1977 14.8315Z" fill="#DC2626"/>
     </svg>
    );
 }
