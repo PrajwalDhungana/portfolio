@@ -4,7 +4,7 @@ import AnimatedLetters from "../utils/AnimatedLetters";
 import Heading from "../utils/Heading";
 
 type Props = {
-  title: string;
+  title?: string;
   classes?: string;
   duration?: number;
   delay?: number;
